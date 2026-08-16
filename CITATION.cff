@@ -1,0 +1,37 @@
+cff-version: 1.2.0
+message: "Please cite the canonical AIAP Core Working Paper using the preferred-citation metadata below."
+type: software
+title: "Artificial Intelligence Assurance Protocol (AIAP) Reference Implementation and Publication Package"
+version: "6.5"
+date-released: "2026-08-14"
+authors:
+  - family-names: McGaughran
+    given-names: James
+    orcid: "https://orcid.org/0009-0005-3324-7290"
+    affiliation: "British University Vietnam"
+    email: "james.mg@buv.edu.vn"
+url: "https://ripplelogic.org/aiap/"
+abstract: "Version-matched documents, workbooks, schemas, examples, validators, and pilot instruments for claim-level assessment assurance in AI-mediated higher education."
+keywords:
+  - generative AI
+  - higher education
+  - assessment validity
+  - assessment assurance
+  - competence authentication
+  - programme-level assurance
+  - agentic AI
+preferred-citation:
+  type: report
+  title: "From Task Design to Claim-Level Assurance: The Artificial Intelligence Assurance Protocol for AI-Mediated Higher Education"
+  authors:
+    - family-names: McGaughran
+      given-names: James
+      orcid: "https://orcid.org/0009-0005-3324-7290"
+      affiliation: "British University Vietnam"
+  institution:
+    name: "British University Vietnam"
+  year: 2026
+  month: 8
+  version: "AIAP Core Working Paper v6.5"
+  status: preprint
+  url: "https://ripplelogic.org/aiap/"

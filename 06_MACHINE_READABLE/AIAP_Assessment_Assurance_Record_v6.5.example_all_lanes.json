@@ -1,0 +1,502 @@
+{
+  "protocol_version": "6.5",
+  "record_id": "AIAP-EXAMPLE-ALL-LANES-v6.5",
+  "generated_at": "2026-08-14T16:00:00Z",
+  "assessment": {
+    "assessment_id": "BSC-PROGRAMME-MAP-2026",
+    "version": "2026.1",
+    "programme": "BSc Professional Analytics",
+    "module": "Programme-level assurance demonstration",
+    "title": "Four-route AIAP assurance example",
+    "credit_or_decision_weight": 100,
+    "group_assessment": false
+  },
+  "material_claims": [
+    {
+      "claim_id": "C1",
+      "capability": "Foundational independent statistical reasoning",
+      "stakes": "high",
+      "condition": {
+        "openness": "controlled",
+        "modality": "in_person",
+        "materially_constrained": true,
+        "residual_threats": [
+          "Identity substitution",
+          "unauthorized assistance"
+        ],
+        "threat_model_version": "TM-2026-ALL-01"
+      },
+      "lane": "lane_1",
+      "ai_roles": [
+        "R0"
+      ],
+      "evidence": [
+        {
+          "evidence_id": "E1",
+          "type": "Secured unseen response",
+          "claim_scope": "Independent reasoning under constrained conditions",
+          "independence_group": "secured",
+          "source_independence": "high",
+          "environmental_independence": "high",
+          "directness": "direct",
+          "uncertainty": "Bounded to recorded conditions",
+          "accessibility_route": "Equivalent construct-valid route documented",
+          "retention_rule": "Retain through appeal window, then dispose or de-identify",
+          "challenge_status": "unchallenged"
+        }
+      ],
+      "authentication": null,
+      "prompt_security": null,
+      "submission_authentication_interval_minutes": null,
+      "competence_profile": null,
+      "individual_attribution": null,
+      "certification_object": "independent_capability",
+      "combination_model": "hurdle",
+      "permitted_inference": "The student demonstrates the named independent capability under the recorded materially constrained conditions.",
+      "programme_use": "Progression anchor and PLO evidence.",
+      "public_wording": "Demonstrated foundational statistical reasoning under named constrained conditions.",
+      "assured_elsewhere": null,
+      "requalification_date": "2027-08-31"
+    },
+    {
+      "claim_id": "C2",
+      "capability": "Strategic interpretation and adaptation",
+      "stakes": "high",
+      "condition": {
+        "openness": "open",
+        "modality": "in_person",
+        "materially_constrained": false,
+        "residual_threats": [
+          "AI-rehearsed defence",
+          "prompt circulation"
+        ],
+        "threat_model_version": "TM-2026-01"
+      },
+      "lane": "lane_2a",
+      "ai_roles": [
+        "R1",
+        "R2",
+        "R4"
+      ],
+      "evidence": [
+        {
+          "evidence_id": "E21",
+          "type": "Open campaign artifact",
+          "claim_scope": "Artifact quality and source use",
+          "independence_group": "product",
+          "source_independence": "low",
+          "environmental_independence": "low",
+          "directness": "supporting",
+          "uncertainty": "Production history not established",
+          "accessibility_route": "Accessible digital submission",
+          "retention_rule": "Retain through appeal window then dispose",
+          "challenge_status": "unchallenged"
+        },
+        {
+          "evidence_id": "E22",
+          "type": "In-person unseen transfer event",
+          "claim_scope": "Present demonstrable competence",
+          "independence_group": "authentication",
+          "source_independence": "high",
+          "environmental_independence": "high",
+          "directness": "direct",
+          "uncertainty": "Case specificity remains",
+          "accessibility_route": "Supervised written unseen-transfer alternative",
+          "retention_rule": "Retain score, rubric and recording through appeal window",
+          "challenge_status": "unchallenged"
+        }
+      ],
+      "authentication": {
+        "mechanism": "Structured in-person viva with live artifact-specific perturbation",
+        "unseen_or_perturbed": true,
+        "decision_rule": "Dual-score with 24/40 authenticated floor",
+        "threshold": 24,
+        "reassessment_route": "One equivalent second authentication",
+        "appeal_route": "Rubric/rationale access, non-involved reviewer, rehearing for procedural unfairness",
+        "assessor_qualification": "Discipline expert calibrated to rubric and accessibility route",
+        "session_controls": {
+          "maximum_continuous_minutes": 90,
+          "break_minutes": 15,
+          "drift_monitoring": "Mid-session anchor and end-of-block review"
+        }
+      },
+      "prompt_security": {
+        "method": "hybrid",
+        "bank_size": 40,
+        "cohort_size": 120,
+        "exposure_window": "Four delivery days",
+        "allocation_method": "Random form allocation plus live artifact-specific perturbation",
+        "rotation_or_live_perturbation": "Every event includes a new constraint tied to the student's artifact",
+        "retirement_rule": "Retire compromised prompts and review affected decisions",
+        "exposure_monitoring": "Student reports, statistical anomalies, staff observation and use counts",
+        "parallel_form_equivalence": {
+          "status": "acceptable_with_controls",
+          "evidence_pointer": "prompt_bank/form_equivalence_2026.md"
+        }
+      },
+      "submission_authentication_interval_minutes": 2880,
+      "competence_profile": {
+        "load_bearing_components": [
+          "explain",
+          "defend",
+          "verify",
+          "adapt",
+          "transfer"
+        ],
+        "component_decisions": {
+          "explain": "supported",
+          "defend": "supported",
+          "verify": "supported",
+          "adapt": "supported",
+          "transfer": "validity_concern"
+        },
+        "dimensionality_status": "profile_by_design"
+      },
+      "individual_attribution": {
+        "group_artifact": false,
+        "separate_evidence": true,
+        "separate_challenge": true,
+        "individual_decision_record": true
+      },
+      "certification_object": "present_demonstrable_competence",
+      "combination_model": "dual_score",
+      "permitted_inference": "The student currently demonstrates the named profile in connection with open work under the recorded conditions.",
+      "programme_use": "Capstone progression and PLO evidence, subject to authentication floor.",
+      "public_wording": "The student demonstrated current ability to explain, defend, verify, adapt, and transfer strategic judgement in connection with open work.",
+      "assured_elsewhere": null,
+      "requalification_date": "2027-08-31"
+    },
+    {
+      "claim_id": "C3",
+      "capability": "Developmental practice in explanatory writing",
+      "stakes": "low",
+      "condition": {
+        "openness": "open",
+        "modality": "open_remote",
+        "materially_constrained": false,
+        "residual_threats": [
+          "Unobserved assistance"
+        ],
+        "threat_model_version": "TM-2026-ALL-03"
+      },
+      "lane": "lane_2b",
+      "ai_roles": [
+        "R1",
+        "R2"
+      ],
+      "evidence": [
+        {
+          "evidence_id": "E3",
+          "type": "Open practice draft",
+          "claim_scope": "Feedback and artifact development",
+          "independence_group": "practice",
+          "source_independence": "low",
+          "environmental_independence": "low",
+          "directness": "supporting",
+          "uncertainty": "No individual certification from this task",
+          "accessibility_route": "Equivalent construct-valid route documented",
+          "retention_rule": "Retain through appeal window, then dispose or de-identify",
+          "challenge_status": "unchallenged"
+        }
+      ],
+      "authentication": null,
+      "prompt_security": null,
+      "submission_authentication_interval_minutes": null,
+      "competence_profile": null,
+      "individual_attribution": null,
+      "certification_object": "non_certifying_learning_support",
+      "combination_model": "non_certifying",
+      "permitted_inference": "The activity supports practice and feedback only; no primary individual capability certification is issued from this claim.",
+      "programme_use": "Developmental feedback; triangulation only.",
+      "public_wording": "Supported learning and feedback; not primary certification of capability.",
+      "assured_elsewhere": "C1 secured anchor and C2 authenticated capstone evidence",
+      "requalification_date": "2027-08-31"
+    },
+    {
+      "claim_id": "C4",
+      "capability": "Accountable AI-mediated analytics workflow",
+      "stakes": "high",
+      "condition": {
+        "openness": "open",
+        "modality": "hybrid",
+        "materially_constrained": false,
+        "residual_threats": [
+          "Workflow log reconstruction",
+          "model drift",
+          "delegated decision opacity"
+        ],
+        "threat_model_version": "TM-2026-ALL-04"
+      },
+      "lane": "lane_3",
+      "ai_roles": [
+        "R4",
+        "R5",
+        "R6"
+      ],
+      "evidence": [
+        {
+          "evidence_id": "E4A",
+          "type": "Versioned workflow and verification record",
+          "claim_scope": "Delegation, verification, correction, stop points, and responsibility",
+          "independence_group": "workflow",
+          "source_independence": "moderate",
+          "environmental_independence": "low",
+          "directness": "supporting",
+          "uncertainty": "Documentary workflow evidence can be reconstructed",
+          "accessibility_route": "Equivalent construct-valid route documented",
+          "retention_rule": "Retain through appeal window, then dispose or de-identify",
+          "challenge_status": "unchallenged"
+        },
+        {
+          "evidence_id": "E4B",
+          "type": "Authenticated unseen AI-output audit",
+          "claim_scope": "Human judgement, verification, correction, and transfer",
+          "independence_group": "lane3_auth",
+          "source_independence": "high",
+          "environmental_independence": "high",
+          "directness": "direct",
+          "uncertainty": "Case specificity remains",
+          "accessibility_route": "Equivalent construct-valid route documented",
+          "retention_rule": "Retain through appeal window, then dispose or de-identify",
+          "challenge_status": "unchallenged"
+        }
+      ],
+      "authentication": {
+        "mechanism": "Live audit of a new AI failure and changed constraint",
+        "unseen_or_perturbed": true,
+        "decision_rule": "Integrated rubric with an authenticated judgement floor",
+        "threshold": "local standard-setting record",
+        "reassessment_route": "One equivalent second event",
+        "appeal_route": "Rubric, rationale, non-involved review, and rehearing where warranted",
+        "assessor_qualification": "Qualified discipline assessor calibrated to the construct and accessible route",
+        "session_controls": {
+          "maximum_continuous_minutes": 90,
+          "break_minutes": 15,
+          "drift_monitoring": "Anchor review and block-level drift check"
+        }
+      },
+      "prompt_security": null,
+      "submission_authentication_interval_minutes": 60,
+      "competence_profile": {
+        "load_bearing_components": [
+          "verify",
+          "adapt",
+          "transfer"
+        ],
+        "component_decisions": {
+          "verify": "supported",
+          "adapt": "supported",
+          "transfer": "supported"
+        },
+        "dimensionality_status": "profile_by_design"
+      },
+      "individual_attribution": {
+        "group_artifact": false,
+        "separate_evidence": true,
+        "separate_challenge": true,
+        "individual_decision_record": true
+      },
+      "certification_object": "ai_integrated_capability",
+      "combination_model": "integrated_rubric",
+      "permitted_inference": "The student demonstrates accountable AI-mediated judgement, verification, correction, and transfer under the recorded conditions.",
+      "programme_use": "Capstone and professional-practice PLO evidence.",
+      "public_wording": "Demonstrated accountable AI-mediated analytics capability with named human controls.",
+      "assured_elsewhere": null,
+      "requalification_date": "2027-08-31"
+    }
+  ],
+  "programme_assurance_composition": {
+    "total_mapped_weight": 100,
+    "lane_1_weight": 25,
+    "lane_2a_weight": 25,
+    "lane_2b_weight": 10,
+    "lane_3_weight": 40,
+    "justification": "The example distributes person-attributable independent, authenticated, AI-integrated, and explicitly non-certifying evidence without treating the percentages as quality scores."
+  },
+  "capacity_gate": {
+    "status": "PASS_WITH_CONTROLS",
+    "conditions": [
+      {
+        "gate_id": "G01",
+        "name": "Claim map approved",
+        "status": "PASS",
+        "evidence_pointer": "local/g01.md",
+        "control": null,
+        "owner": "Programme assurance lead",
+        "expiry": "2027-08-31",
+        "action_if_failed": "Pause, redesign, narrow, delay, or withhold the affected claim."
+      },
+      {
+        "gate_id": "G02",
+        "name": "Prompt security governed",
+        "status": "PASS",
+        "evidence_pointer": "local/g02.md",
+        "control": null,
+        "owner": "Programme assurance lead",
+        "expiry": "2027-08-31",
+        "action_if_failed": "Pause, redesign, narrow, delay, or withhold the affected claim."
+      },
+      {
+        "gate_id": "G03",
+        "name": "Parallel-form equivalence supported",
+        "status": "PASS_WITH_CONTROLS",
+        "evidence_pointer": "local/g03.md",
+        "control": "Pilot-only use; review after first cycle",
+        "owner": "Programme assurance lead",
+        "expiry": "2027-08-31",
+        "action_if_failed": "Pause, redesign, narrow, delay, or withhold the affected claim."
+      },
+      {
+        "gate_id": "G04",
+        "name": "Submission-authentication interval justified",
+        "status": "PASS",
+        "evidence_pointer": "local/g04.md",
+        "control": null,
+        "owner": "Programme assurance lead",
+        "expiry": "2027-08-31",
+        "action_if_failed": "Pause, redesign, narrow, delay, or withhold the affected claim."
+      },
+      {
+        "gate_id": "G05",
+        "name": "Assessor qualification and calibration",
+        "status": "PASS",
+        "evidence_pointer": "local/g05.md",
+        "control": null,
+        "owner": "Programme assurance lead",
+        "expiry": "2027-08-31",
+        "action_if_failed": "Pause, redesign, narrow, delay, or withhold the affected claim."
+      },
+      {
+        "gate_id": "G06",
+        "name": "Reviewer and panel capacity",
+        "status": "PASS",
+        "evidence_pointer": "local/g06.md",
+        "control": null,
+        "owner": "Programme assurance lead",
+        "expiry": "2027-08-31",
+        "action_if_failed": "Pause, redesign, narrow, delay, or withhold the affected claim."
+      },
+      {
+        "gate_id": "G07",
+        "name": "Independence and conflicts controlled",
+        "status": "PASS",
+        "evidence_pointer": "local/g07.md",
+        "control": null,
+        "owner": "Programme assurance lead",
+        "expiry": "2027-08-31",
+        "action_if_failed": "Pause, redesign, narrow, delay, or withhold the affected claim."
+      },
+      {
+        "gate_id": "G08",
+        "name": "Accessibility-equivalent route operational",
+        "status": "PASS",
+        "evidence_pointer": "local/g08.md",
+        "control": null,
+        "owner": "Programme assurance lead",
+        "expiry": "2027-08-31",
+        "action_if_failed": "Pause, redesign, narrow, delay, or withhold the affected claim."
+      },
+      {
+        "gate_id": "G09",
+        "name": "Appeal and second-review route operational",
+        "status": "PASS",
+        "evidence_pointer": "local/g09.md",
+        "control": null,
+        "owner": "Programme assurance lead",
+        "expiry": "2027-08-31",
+        "action_if_failed": "Pause, redesign, narrow, delay, or withhold the affected claim."
+      },
+      {
+        "gate_id": "G10",
+        "name": "Data governance approved",
+        "status": "PASS",
+        "evidence_pointer": "local/g10.md",
+        "control": null,
+        "owner": "Programme assurance lead",
+        "expiry": "2027-08-31",
+        "action_if_failed": "Pause, redesign, narrow, delay, or withhold the affected claim."
+      },
+      {
+        "gate_id": "G11",
+        "name": "Capacity-degradation fallback declared",
+        "status": "PASS",
+        "evidence_pointer": "local/g11.md",
+        "control": null,
+        "owner": "Programme assurance lead",
+        "expiry": "2027-08-31",
+        "action_if_failed": "Pause, redesign, narrow, delay, or withhold the affected claim."
+      },
+      {
+        "gate_id": "G12",
+        "name": "Threat model acceptable",
+        "status": "PASS_WITH_CONTROLS",
+        "evidence_pointer": "local/g12.md",
+        "control": "Pilot-only use; review after first cycle",
+        "owner": "Programme assurance lead",
+        "expiry": "2027-08-31",
+        "action_if_failed": "Pause, redesign, narrow, delay, or withhold the affected claim."
+      },
+      {
+        "gate_id": "G13",
+        "name": "No unresolved high-severity exception",
+        "status": "PASS",
+        "evidence_pointer": "local/g13.md",
+        "control": null,
+        "owner": "Programme assurance lead",
+        "expiry": "2027-08-31",
+        "action_if_failed": "Pause, redesign, narrow, delay, or withhold the affected claim."
+      }
+    ],
+    "degradation_plan": {
+      "triggers": [
+        "Assessor illness",
+        "Prompt compromise",
+        "Technology failure",
+        "Accessibility route unavailable"
+      ],
+      "permitted_fallbacks": [
+        "Equivalent governed route",
+        "Reschedule",
+        "Narrow or delay decision",
+        "Withhold affected claim"
+      ],
+      "prohibited_response": "Silently dilute or waive the declared evidence standard",
+      "decision_owner": "Programme assurance board"
+    }
+  },
+  "governance": {
+    "owner": "Programme assurance board",
+    "accessibility_route": "Supervised written unseen-transfer task scored to the same load-bearing criteria",
+    "appeal_rights": {
+      "rubric_and_rationale_access": true,
+      "evidence_access": true,
+      "non_involved_reviewer": true,
+      "rehearing_rule": "Equivalent rehearing where procedural unfairness or material technology/access failure is established"
+    },
+    "data_governance": {
+      "purpose": "Assessment validity, moderation and appeal",
+      "minimum_necessary_data": "Rubric decisions, limited recording where lawful, prompt/form IDs and exposure status",
+      "authorized_roles": [
+        "assessor",
+        "moderator",
+        "appeal reviewer",
+        "data custodian"
+      ],
+      "retention": "Through the institutional appeal period, then dispose or de-identify",
+      "correction_route": "Student may request correction of factual record",
+      "incident_response": "Contain, notify, review affected decisions and requalify controls"
+    },
+    "prompt_confidentiality": "Restricted access; circulation and exposure incidents are logged",
+    "publication_boundary": "No conformance or record status is represented as empirical validation, legal compliance, or deployment authority."
+  },
+  "status_boundary": "Comprehensive four-route example for implementation and validator testing; not a validated programme, conformance determination, or deployment authorization.",
+  "evidence_cutoff": "2026-08-14",
+  "review_date": "2027-08-31",
+  "requalification_triggers": [
+    "Pilot evidence below preregistered thresholds",
+    "Successful red-team defeat",
+    "Material agentic-AI capability change",
+    "Assessment or modality redesign",
+    "Observed accessibility, privacy or capacity failure"
+  ]
+}

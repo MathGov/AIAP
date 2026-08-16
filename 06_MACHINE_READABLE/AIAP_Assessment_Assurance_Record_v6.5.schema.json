@@ -1,0 +1,1001 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ripplelogic.org/aiap/v6.5/assessment-assurance-record.schema.json",
+  "title": "AIAP Assessment Assurance Record v6.5",
+  "description": "Machine-readable record for claim-level AIAP assessment assurance. The schema checks structure and selected cross-field rules; the version-matched semantic validator checks arithmetic, gate consistency, lane/object compatibility, group attribution, and fail-closed status logic. Structural validity does not establish substantive validity, empirical validation, legal compliance, or institutional authority.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "protocol_version",
+    "record_id",
+    "assessment",
+    "material_claims",
+    "programme_assurance_composition",
+    "capacity_gate",
+    "governance",
+    "status_boundary"
+  ],
+  "properties": {
+    "protocol_version": {
+      "const": "6.5"
+    },
+    "record_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "assessment": {
+      "$ref": "#/$defs/assessment"
+    },
+    "material_claims": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/materialClaim"
+      }
+    },
+    "programme_assurance_composition": {
+      "$ref": "#/$defs/assuranceComposition"
+    },
+    "capacity_gate": {
+      "$ref": "#/$defs/capacityGate"
+    },
+    "governance": {
+      "$ref": "#/$defs/governance"
+    },
+    "status_boundary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evidence_cutoff": {
+      "type": "string",
+      "format": "date"
+    },
+    "review_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "requalification_triggers": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "$defs": {
+    "assessment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "assessment_id",
+        "version",
+        "programme",
+        "module",
+        "title"
+      ],
+      "properties": {
+        "assessment_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "programme": {
+          "type": "string",
+          "minLength": 1
+        },
+        "module": {
+          "type": "string",
+          "minLength": 1
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "credit_or_decision_weight": {
+          "type": "number",
+          "minimum": 0
+        },
+        "group_assessment": {
+          "type": "boolean"
+        }
+      }
+    },
+    "materialClaim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "claim_id",
+        "capability",
+        "stakes",
+        "condition",
+        "lane",
+        "evidence",
+        "certification_object",
+        "combination_model",
+        "permitted_inference",
+        "programme_use",
+        "public_wording"
+      ],
+      "properties": {
+        "claim_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "capability": {
+          "type": "string",
+          "minLength": 1
+        },
+        "stakes": {
+          "enum": [
+            "low",
+            "moderate",
+            "high",
+            "safety_critical"
+          ]
+        },
+        "condition": {
+          "$ref": "#/$defs/condition"
+        },
+        "lane": {
+          "enum": [
+            "lane_1",
+            "lane_2a",
+            "lane_2b",
+            "lane_3"
+          ]
+        },
+        "ai_roles": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "R0",
+              "R1",
+              "R2",
+              "R3",
+              "R4",
+              "R5",
+              "R6"
+            ]
+          }
+        },
+        "evidence": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/evidenceObject"
+          }
+        },
+        "authentication": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/authentication"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "prompt_security": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/promptSecurity"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "submission_authentication_interval_minutes": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "competence_profile": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/competenceProfile"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "individual_attribution": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/individualAttribution"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "certification_object": {
+          "enum": [
+            "artifact_quality",
+            "independent_capability",
+            "present_demonstrable_competence",
+            "production_provenance",
+            "ai_integrated_capability",
+            "non_certifying_learning_support"
+          ],
+          "description": "Operational assurance object or routing value. Four positive assurance objects are artifact_quality, present_demonstrable_competence, production_provenance, and ai_integrated_capability. independent_capability is a Lane 1 condition-qualified routing value for person-attributable competence; non_certifying_learning_support is a Lane 2B claim-status routing value. These do not create fifth and sixth positive assurance objects."
+        },
+        "combination_model": {
+          "enum": [
+            "hurdle",
+            "dual_score",
+            "integrated_rubric",
+            "non_certifying"
+          ],
+          "description": "Predeclared evidence-combination model for certifying claims. Lane 2B uses non_certifying because no product-authentication combination carries certification authority in that task."
+        },
+        "permitted_inference": {
+          "type": "string",
+          "minLength": 1
+        },
+        "programme_use": {
+          "type": "string",
+          "minLength": 1
+        },
+        "public_wording": {
+          "type": "string",
+          "minLength": 1
+        },
+        "assured_elsewhere": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "requalification_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "lane": {
+                "const": "lane_2a"
+              }
+            },
+            "required": [
+              "lane"
+            ]
+          },
+          "then": {
+            "required": [
+              "authentication",
+              "prompt_security",
+              "submission_authentication_interval_minutes",
+              "competence_profile"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "lane": {
+                "const": "lane_2b"
+              }
+            },
+            "required": [
+              "lane"
+            ]
+          },
+          "then": {
+            "required": [
+              "assured_elsewhere"
+            ],
+            "properties": {
+              "combination_model": {
+                "const": "non_certifying"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "lane": {
+                "const": "lane_3"
+              }
+            },
+            "required": [
+              "lane"
+            ]
+          },
+          "then": {
+            "properties": {
+              "certification_object": {
+                "const": "ai_integrated_capability"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "condition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "openness",
+        "modality",
+        "materially_constrained"
+      ],
+      "properties": {
+        "openness": {
+          "enum": [
+            "controlled",
+            "open"
+          ]
+        },
+        "modality": {
+          "enum": [
+            "in_person",
+            "invigilated_remote",
+            "open_remote",
+            "workplace",
+            "hybrid",
+            "asynchronous"
+          ]
+        },
+        "materially_constrained": {
+          "type": "boolean"
+        },
+        "residual_threats": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "threat_model_version": {
+          "type": "string"
+        }
+      }
+    },
+    "evidenceObject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "evidence_id",
+        "type",
+        "claim_scope",
+        "independence_group",
+        "source_independence",
+        "environmental_independence",
+        "retention_rule",
+        "challenge_status"
+      ],
+      "properties": {
+        "evidence_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "claim_scope": {
+          "type": "string",
+          "minLength": 1
+        },
+        "independence_group": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_independence": {
+          "enum": [
+            "low",
+            "moderate",
+            "high"
+          ]
+        },
+        "environmental_independence": {
+          "enum": [
+            "low",
+            "moderate",
+            "high"
+          ]
+        },
+        "directness": {
+          "enum": [
+            "direct",
+            "indirect",
+            "supporting"
+          ]
+        },
+        "uncertainty": {
+          "type": "string"
+        },
+        "accessibility_route": {
+          "type": "string"
+        },
+        "retention_rule": {
+          "type": "string",
+          "minLength": 1
+        },
+        "challenge_status": {
+          "enum": [
+            "unchallenged",
+            "challenged",
+            "resolved",
+            "withdrawn"
+          ]
+        }
+      }
+    },
+    "authentication": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mechanism",
+        "unseen_or_perturbed",
+        "decision_rule",
+        "reassessment_route",
+        "appeal_route",
+        "assessor_qualification",
+        "session_controls"
+      ],
+      "properties": {
+        "mechanism": {
+          "type": "string",
+          "minLength": 1
+        },
+        "unseen_or_perturbed": {
+          "const": true
+        },
+        "decision_rule": {
+          "type": "string",
+          "minLength": 1
+        },
+        "threshold": {
+          "type": [
+            "number",
+            "string",
+            "null"
+          ]
+        },
+        "reassessment_route": {
+          "type": "string",
+          "minLength": 1
+        },
+        "appeal_route": {
+          "type": "string",
+          "minLength": 1
+        },
+        "assessor_qualification": {
+          "type": "string",
+          "minLength": 1
+        },
+        "session_controls": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "maximum_continuous_minutes",
+            "break_minutes",
+            "drift_monitoring"
+          ],
+          "properties": {
+            "maximum_continuous_minutes": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "break_minutes": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "drift_monitoring": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      }
+    },
+    "promptSecurity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "method",
+        "cohort_size",
+        "exposure_window",
+        "allocation_method",
+        "rotation_or_live_perturbation",
+        "retirement_rule",
+        "exposure_monitoring",
+        "parallel_form_equivalence"
+      ],
+      "properties": {
+        "method": {
+          "enum": [
+            "banked",
+            "live_perturbation",
+            "hybrid"
+          ]
+        },
+        "bank_size": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "cohort_size": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "exposure_window": {
+          "type": "string",
+          "minLength": 1
+        },
+        "allocation_method": {
+          "type": "string",
+          "minLength": 1
+        },
+        "rotation_or_live_perturbation": {
+          "type": "string",
+          "minLength": 1
+        },
+        "retirement_rule": {
+          "type": "string",
+          "minLength": 1
+        },
+        "exposure_monitoring": {
+          "type": "string",
+          "minLength": 1
+        },
+        "parallel_form_equivalence": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "status",
+            "evidence_pointer"
+          ],
+          "properties": {
+            "status": {
+              "enum": [
+                "not_required_single_form",
+                "specified_but_untested",
+                "acceptable_with_controls",
+                "supported",
+                "not_equivalent"
+              ]
+            },
+            "evidence_pointer": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      }
+    },
+    "competenceProfile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "load_bearing_components",
+        "component_decisions",
+        "dimensionality_status"
+      ],
+      "properties": {
+        "load_bearing_components": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "explain",
+              "defend",
+              "verify",
+              "adapt",
+              "transfer"
+            ]
+          }
+        },
+        "component_decisions": {
+          "type": "object",
+          "additionalProperties": {
+            "enum": [
+              "supported",
+              "validity_concern",
+              "not_supported",
+              "not_assessed"
+            ]
+          },
+          "minProperties": 1,
+          "propertyNames": {
+            "enum": [
+              "explain",
+              "defend",
+              "verify",
+              "adapt",
+              "transfer"
+            ]
+          },
+          "description": "Decision for each declared load-bearing competence component. The semantic validator requires exact correspondence with load_bearing_components."
+        },
+        "dimensionality_status": {
+          "enum": [
+            "profile_by_design",
+            "single_dimension_supported",
+            "multidimensional_supported",
+            "not_assessed"
+          ]
+        }
+      }
+    },
+    "individualAttribution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "group_artifact",
+        "separate_evidence",
+        "separate_challenge",
+        "individual_decision_record"
+      ],
+      "properties": {
+        "group_artifact": {
+          "type": "boolean"
+        },
+        "separate_evidence": {
+          "type": "boolean"
+        },
+        "separate_challenge": {
+          "type": "boolean"
+        },
+        "individual_decision_record": {
+          "type": "boolean"
+        }
+      }
+    },
+    "assuranceComposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "total_mapped_weight",
+        "lane_1_weight",
+        "lane_2a_weight",
+        "lane_2b_weight",
+        "lane_3_weight",
+        "justification"
+      ],
+      "properties": {
+        "total_mapped_weight": {
+          "type": "number",
+          "minimum": 0
+        },
+        "lane_1_weight": {
+          "type": "number",
+          "minimum": 0
+        },
+        "lane_2a_weight": {
+          "type": "number",
+          "minimum": 0
+        },
+        "lane_2b_weight": {
+          "type": "number",
+          "minimum": 0
+        },
+        "lane_3_weight": {
+          "type": "number",
+          "minimum": 0
+        },
+        "justification": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "description": "Lane weights must sum to total_mapped_weight; enforced by the version-matched semantic validator because Draft 2020-12 cannot express sibling arithmetic portably."
+    },
+    "capacityGate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "conditions",
+        "degradation_plan"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "PASS",
+            "PASS_WITH_CONTROLS",
+            "FAIL",
+            "NOT_READY"
+          ],
+          "description": "Overall gate status. Workbook display NOT READY serializes as NOT_READY; Not assessed serializes as NOT_ASSESSED."
+        },
+        "conditions": {
+          "type": "array",
+          "minItems": 13,
+          "items": {
+            "$ref": "#/$defs/gateCondition"
+          },
+          "maxItems": 13,
+          "description": "Exactly thirteen version-matched gate conditions G01-G13. The semantic validator enforces unique IDs, complete coverage, and overall-status consistency."
+        },
+        "degradation_plan": {
+          "$ref": "#/$defs/degradationPlan"
+        }
+      }
+    },
+    "gateCondition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "gate_id",
+        "name",
+        "status",
+        "evidence_pointer",
+        "action_if_failed"
+      ],
+      "properties": {
+        "gate_id": {
+          "type": "string",
+          "pattern": "^G\\d{2}$"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "PASS",
+            "PASS_WITH_CONTROLS",
+            "FAIL",
+            "NOT_ASSESSED"
+          ]
+        },
+        "evidence_pointer": {
+          "type": "string",
+          "minLength": 1
+        },
+        "control": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "owner": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "expiry": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "action_if_failed": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "degradationPlan": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "triggers",
+        "permitted_fallbacks",
+        "prohibited_response",
+        "decision_owner"
+      ],
+      "properties": {
+        "triggers": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "permitted_fallbacks": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "prohibited_response": {
+          "type": "string",
+          "minLength": 1
+        },
+        "decision_owner": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "governance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "owner",
+        "accessibility_route",
+        "appeal_rights",
+        "data_governance",
+        "prompt_confidentiality",
+        "publication_boundary"
+      ],
+      "properties": {
+        "owner": {
+          "type": "string",
+          "minLength": 1
+        },
+        "accessibility_route": {
+          "type": "string",
+          "minLength": 1
+        },
+        "appeal_rights": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "rubric_and_rationale_access",
+            "evidence_access",
+            "non_involved_reviewer",
+            "rehearing_rule"
+          ],
+          "properties": {
+            "rubric_and_rationale_access": {
+              "type": "boolean"
+            },
+            "evidence_access": {
+              "type": "boolean"
+            },
+            "non_involved_reviewer": {
+              "type": "boolean"
+            },
+            "rehearing_rule": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "data_governance": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "purpose",
+            "minimum_necessary_data",
+            "authorized_roles",
+            "retention",
+            "correction_route",
+            "incident_response"
+          ],
+          "properties": {
+            "purpose": {
+              "type": "string"
+            },
+            "minimum_necessary_data": {
+              "type": "string"
+            },
+            "authorized_roles": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "retention": {
+              "type": "string"
+            },
+            "correction_route": {
+              "type": "string"
+            },
+            "incident_response": {
+              "type": "string"
+            }
+          }
+        },
+        "prompt_confidentiality": {
+          "type": "string",
+          "minLength": 1
+        },
+        "publication_boundary": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "assessment": {
+            "properties": {
+              "group_assessment": {
+                "const": true
+              }
+            },
+            "required": [
+              "group_assessment"
+            ]
+          }
+        },
+        "required": [
+          "assessment"
+        ]
+      },
+      "then": {
+        "properties": {
+          "material_claims": {
+            "items": {
+              "allOf": [
+                {
+                  "if": {
+                    "properties": {
+                      "stakes": {
+                        "enum": [
+                          "high",
+                          "safety_critical"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "stakes"
+                    ]
+                  },
+                  "then": {
+                    "required": [
+                      "individual_attribution"
+                    ],
+                    "properties": {
+                      "individual_attribution": {
+                        "allOf": [
+                          {
+                            "$ref": "#/$defs/individualAttribution"
+                          },
+                          {
+                            "properties": {
+                              "group_artifact": {
+                                "const": true
+                              },
+                              "separate_evidence": {
+                                "const": true
+                              },
+                              "separate_challenge": {
+                                "const": true
+                              },
+                              "individual_decision_record": {
+                                "const": true
+                              }
+                            },
+                            "required": [
+                              "group_artifact",
+                              "separate_evidence",
+                              "separate_challenge",
+                              "individual_decision_record"
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  ]
+}

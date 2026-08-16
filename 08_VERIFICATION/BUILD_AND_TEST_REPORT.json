@@ -1,0 +1,159 @@
+{
+  "release": "AIAP v6.5",
+  "release_date": "2026-08-14",
+  "scope": "publication, repository, operational-instrument, and cross-artifact integrity; not empirical validation or deployment authority",
+  "status": "PASS",
+  "release_tree_file_count": 59,
+  "automated_release_dimensions": 10,
+  "automated_release_result": "10/10 PASS after manifest sealing",
+  "document_production": {
+    "docx_files": 8,
+    "pdf_files": 8,
+    "total_rendered_pages": 129,
+    "core_pages": 87,
+    "companion_pages": 42,
+    "docx_internal_hyperlinks": 407,
+    "docx_bookmarks": 416,
+    "materialized_toc_entries": 171,
+    "pdf_internal_links": 411,
+    "pdf_distinct_internal_destinations": 191,
+    "pdf_external_links": 83,
+    "pdf_outline_entries": 180,
+    "broken_pdf_internal_destinations": 0,
+    "core_embedded_figures": 5,
+    "core_figures_with_alt_text": 5,
+    "tracked_changes": 0,
+    "comment_parts": 0,
+    "unresolved_docx_anchors": 0,
+    "external_image_relationships": 0,
+    "malformed_or_stale_external_hyperlink_relationships": 0
+  },
+  "spreadsheets": {
+    "xlsx_files": 5,
+    "formula_cells": 61,
+    "formula_cells_with_cached_values": 61,
+    "missing_formula_cached_values": 0,
+    "cached_error_cells": 0,
+    "pilot_data_dictionary_field_count": 73,
+    "pilot_primary_analyses_computable": true,
+    "independent_criterion_requirement": "Conditional",
+    "local_comparator": {
+      "formula": "(number of sittings × duration hours × invigilators) + setup",
+      "default_sittings": 1,
+      "default_invigilation_hours": 8,
+      "default_recurring_hours": 113,
+      "default_staff_hours_per_student": 0.37666666666666665
+    },
+    "prompt_construct_blueprint_default": "Not assessed",
+    "status_serialization_complete": true,
+    "programme_exemplar_marked_non_normative": true,
+    "feasibility_gate_affirmative_pass_verified": true
+  },
+  "normative_synchronization": {
+    "capacity_gate_labels": [
+      "G01",
+      "G02",
+      "G03",
+      "G04",
+      "G05",
+      "G06",
+      "G07",
+      "G08",
+      "G09",
+      "G10",
+      "G11",
+      "G12",
+      "G13"
+    ],
+    "exact_g01_g13_alignment": true,
+    "individual_certification_shall": true,
+    "sampling_cannot_replace_individual_certification": true
+  },
+  "machine_readable": {
+    "json_schema_draft": "2020-12",
+    "examples_validated": 2,
+    "semantic_validator": "PASS",
+    "adversarial_unit_tests": "9/9 PASS",
+    "test_inputs_published_in": "06_MACHINE_READABLE/test_validate_aiap_record.py"
+  },
+  "source_fidelity": {
+    "encoding": "UTF-8",
+    "non_ascii_verification": "PASS",
+    "exact_regression_tokens": {
+      "Kılınç": true,
+      "Gašević": true,
+      "Raković": true,
+      "Foltýnek": true,
+      "Šigut": true,
+      "Levels 2–5": true,
+      "R0–R6": true,
+      "300 × 5 minutes": true,
+      "Standard §11": true,
+      "©": true,
+      "“oralness”": true
+    },
+    "evidence_status_date": "14 August 2026",
+    "competence_profile": [
+      "explain",
+      "defend",
+      "verify",
+      "adapt",
+      "transfer"
+    ],
+    "phase_labels_in_empirical_crosswalk": true,
+    "unresolved_markdown_links": 0,
+    "missing_markdown_images": 0
+  },
+  "accessibility": {
+    "high_severity_findings": 0,
+    "medium_severity_findings": 0,
+    "low_severity_findings": 71,
+    "low_severity_scope": "raw DOI and source URLs retained in the scholarly reference list for direct traceability"
+  },
+  "manual_visual_inspection": {
+    "core_pages_inspected": 87,
+    "companion_pages_inspected": 42,
+    "total_pages_inspected": 129,
+    "workbook_previews_inspected": 5,
+    "result": "PASS — no clipping, overflow, missing figure, broken glyph, or material layout defect found"
+  },
+  "archive_boundary": {
+    "release_tree_verifier": "08_VERIFICATION/verify_release.py",
+    "file_manifest": "exact size and SHA-256 coverage",
+    "sha256_manifest": "exact coverage of every release file except itself",
+    "final_zip_test": "performed after sealing; digest supplied with delivery",
+    "runtime_debris_false_failure_regression_test": "PASS"
+  },
+  "scientific_boundary": "Specification-complete and publication-ready; integrated empirical validation is not established.",
+  "next_legitimate_change_source": "Phase 1 pilot evidence or a reproducible security, rights, interoperability, or factual defect",
+  "publication_build": {
+    "id": "AIAP-v6.5+2026.08.15.1",
+    "date": "2026-08-15",
+    "semantic_change": false,
+    "release_harness_hardening": true,
+    "python_documented_no_bytecode_mode": "-B",
+    "ephemeral_runtime_allowlist": [
+      "__pycache__",
+      "*.pyc",
+      "*.pyo",
+      ".git",
+      ".DS_Store",
+      "Thumbs.db",
+      "~$*",
+      ".tmp",
+      ".bak"
+    ]
+  },
+  "publication_deployment": {
+    "canonical_url": "https://ripplelogic.org/aiap/",
+    "repository": "https://github.com/MathGov/ripple-logic",
+    "monorepo_path": "aiap/v6.5",
+    "github_release_tag": "AIAP-v6.5",
+    "github_release_url": "https://github.com/MathGov/ripple-logic/releases/tag/AIAP-v6.5",
+    "canonical_assets": [
+      "AIAP_Core_Working_Paper_v6.5.pdf",
+      "AIAP_Normative_Assurance_Standard_v6.5.pdf",
+      "AIAP_v6.5_COMPLETE_READY_FINAL.zip"
+    ]
+  }
+}

@@ -1,0 +1,74 @@
+release:
+  name: Artificial Intelligence Assurance Protocol
+  short_name: AIAP
+  version: 6.5
+  date: 2026-08-14
+  release_class: final canonical publication release
+  canonical_paper: AIAP Core Working Paper v6.5
+  status: specification-complete; publication-ready; governed-pilot ready
+  operational_hardening: final cross-artifact audit passed
+  empirical_validation: not established as an integrated institutional intervention
+architecture:
+  stages: 6
+  stage_sequence:
+  - claim_decomposition
+  - learning_claim
+  - evidence_producing_condition
+  - assurance_route
+  - roles_evidence_decision_rules
+  - programme_mapping_public_use
+  lanes:
+  - lane_1
+  - lane_2a
+  - lane_2b
+  - lane_3
+  positive_assurance_objects:
+  - artifact_quality
+  - present_demonstrable_competence
+  - production_provenance
+  - ai_integrated_capability
+  operational_routing_values:
+  - independent_capability
+  - non_certifying_learning_support
+  capacity_gates:
+  - G01
+  - G02
+  - G03
+  - G04
+  - G05
+  - G06
+  - G07
+  - G08
+  - G09
+  - G10
+  - G11
+  - G12
+  - G13
+empirical_sequence:
+  phase_1: bounded feasibility and measurement study
+  phase_2: multi-institution comparative and transportability study
+compatibility:
+  core: 6.5
+  standard: 6.5
+  handbook: 6.5
+  pilot_protocol: 6.5
+  toolkit: 6.5
+  role_manual: 6.5
+  evidence_governance: 6.5
+  workbooks: 6.5
+  schema: 6.5
+rights:
+  holder: James McGaughran
+  notice: All rights reserved
+  license_file: LICENSE.md
+build:
+  id: AIAP-v6.5+2026.08.15.1
+  date: '2026-08-15'
+  class: release-engineering hardening; no semantic specification change
+publication:
+  canonical_url: https://ripplelogic.org/aiap/
+  repository_url: https://github.com/MathGov/ripple-logic
+  repository_path: aiap/v6.5
+  github_release_tag: AIAP-v6.5
+  github_release_url: https://github.com/MathGov/ripple-logic/releases/tag/AIAP-v6.5
+  release_zip: AIAP_v6.5_COMPLETE_READY_FINAL.zip
