@@ -1,7 +1,5 @@
-# AIAP v6.5 License Notice
+# AIAP — open source and open research
 
-Copyright © 2026 James McGaughran. **All rights reserved.**
+Original software and schemas: **Apache-2.0**. Author-controlled research text, figures, data, workbooks and other non-software material: **CC-BY-4.0**.
 
-This repository and release are made publicly available for reading, scholarly evaluation, criticism, citation, governed pilot preparation, and verification of the included examples. Public availability does **not** grant an open-source, Creative Commons, patent, trademark, certification, redistribution, adaptation, translation, or commercial-use licence.
-
-Any reuse beyond what is permitted by applicable law requires prior written permission from the rights holder. See `RIGHTS_AND_LICENSING.md` for the complete scope and authority boundary.
+The controlling scope and supersession of earlier restrictive notices are in [OPEN_LICENSE_GRANT.md](OPEN_LICENSE_GRANT.md). Full license texts are in [LICENSES](LICENSES). Third-party rights are retained. Attribution and applicable license conditions remain required.
