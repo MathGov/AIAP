@@ -35,8 +35,3 @@ preferred-citation:
   version: "AIAP Core Working Paper v6.5"
   status: preprint
   url: "https://ripplelogic.org/aiap/"
-
-repository-code: "https://github.com/MathGov/AIAP"
-license:
-  - Apache-2.0
-  - CC-BY-4.0
